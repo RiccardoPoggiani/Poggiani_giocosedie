@@ -27,7 +27,7 @@ class Display extends Thread {
     /**
      * Metodo run eseguito quando il thread viene avviato.
      * 
-     * Aggiorna continuamente lo stato delle sedie finché tutte le sedie non 
+     * Aggiorna continuamente lo stato delle sedie finché tutte le sedie non
      * sono occupate.
      */
     public void run() {

@@ -11,7 +11,7 @@ class Partecipante extends Thread {
     Posto sedie[];
 
     /**
-     * Costruttore della classe Partecipante. 
+     * Costruttore della classe Partecipante.
      * 
      * @param sedie Array di sedie che il partecipante tenterà di occupare.
      */
@@ -30,14 +30,21 @@ class Partecipante extends Thread {
             // Attesa di un tempo casuale prima di cercare una sedia
             sleep((int) (Math.random() * 1000));
 
+            Scrittore scrittore = new Scrittore("Risultato.txt");
+
             for (int i = 0; i < sedie.length; i++) {
                 if (sedie[i].occupa()) {
-                    System.out.println("Sono il Thread " + this.getName() + ". Sono riuscito a sedermi sul posto " + i);
+                    String vinto = "Sono il Partecipante " + this.getName() + ". Sono riuscito a sedermi sul posto " + i
+                            + "\n";
+                    System.out.println(vinto);
+                    scrittore.scrivi(vinto);
                     return;
                 }
             }
             // Se nessuna sedia è disponibile
-            System.out.println("Sono il Thread " + this.getName() + ". Ho perso :((((");
+            String perso = "Sono il Partecipante " + this.getName() + ". Ho perso :((((";
+            System.out.println(perso);
+            scrittore.scrivi(perso);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }

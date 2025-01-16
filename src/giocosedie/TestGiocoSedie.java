@@ -7,7 +7,7 @@ import java.util.logging.Logger;
  * Crea un array di posti e di partecipanti, poi avvia i thread per
  * gestire il gioco.
  * 
- * Il gioco simula il classico "gioco delle sedie", dove ci sono più 
+ * Il gioco simula il classico "gioco delle sedie", dove ci sono più
  * partecipanti che posti e i partecipanti cercano di sedersi in modo
  * concorrente.
  * 
@@ -19,13 +19,14 @@ public class TestGiocoSedie {
     private final static int NUMSEDIE = 15;
     // Logger per registrare le informazioni di esecuzione
     private static Logger logger = Logger.getLogger("GiocoSedie.TestGiocoSedie");
-    
+
     /**
      * Metodo principale per avviare l'applicazione.
      * 
      * @param args Argomenti della riga di comando
      */
     public static void main(String[] args) {
+
         // Crea un array di oggetti Posto, ciascuno rappresentante una sedia
         Posto sedie[] = new Posto[NUMSEDIE];
 
@@ -42,7 +43,8 @@ public class TestGiocoSedie {
         Partecipante array[] = new Partecipante[NUMSEDIE + 1];
         for (int i = 0; i < NUMSEDIE + 1; i++) {
             array[i] = new Partecipante(sedie);
-            logger.info("Sto facendo partire il thread id: " + array[i].getId() + " name: " + array[i].getName() + "\n");
+            logger.info(
+                    "Sto facendo partire il thread id: " + array[i].getId() + " name: " + array[i].getName() + "\n");
             array[i].start();
         }
     }
