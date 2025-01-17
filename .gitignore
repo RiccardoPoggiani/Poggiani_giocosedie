@@ -1,0 +1,27 @@
+# Ignora file temporanei del sistema operativo
+*.log
+*.tmp
+*.bak
+*.swp
+.DS_Store
+Thumbs.db
+
+# Ignora directory di build
+/build/
+/dist/
+
+# Ignora file compilati Java
+*.class
+*.jar
+/target/
+
+# Ignora file delle dipendenze
+/lib/
+
+# Ignora file di output specifici
+Risultato.txt
+
+# Ignora altri file potenzialmente non necessari
+*.out
+*.o
+*.war

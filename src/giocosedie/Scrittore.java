@@ -14,7 +14,7 @@ import java.util.logging.Logger;
 
 public class Scrittore {
 
-    String nomeFile;
+    private String nomeFile;
 
     public Scrittore(String nomeFile) {
         this.nomeFile = nomeFile;

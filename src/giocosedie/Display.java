@@ -36,7 +36,7 @@ class Display extends Thread {
                 int count = 0;
                 // Attesa di un tempo casuale prima di aggiornare lo stato
                 sleep((int) (Math.random() * 250));
-
+                // Mostra il numero di posti liberi e occupati
                 for (int i = 0; i < sedie.length; i++) {
                     if (sedie[i].libero())
                         System.out.print("0");

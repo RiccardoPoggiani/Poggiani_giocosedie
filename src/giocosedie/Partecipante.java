@@ -30,8 +30,11 @@ class Partecipante extends Thread {
             // Attesa di un tempo casuale prima di cercare una sedia
             sleep((int) (Math.random() * 1000));
 
+            // Creazione oggetto Scrittore con cui si scrive il file Risultati.txt
             Scrittore scrittore = new Scrittore("Risultato.txt");
 
+            // Se vi sono sedie disponibili, il partecipante (concorrentemente agli altri)
+            // si siede
             for (int i = 0; i < sedie.length; i++) {
                 if (sedie[i].occupa()) {
                     String vinto = "Sono il Partecipante " + this.getName() + ". Sono riuscito a sedermi sul posto " + i
@@ -41,7 +44,7 @@ class Partecipante extends Thread {
                     return;
                 }
             }
-            // Se nessuna sedia è disponibile
+            // Se nessuna sedia è disponibile il partcipante perde
             String perso = "Sono il Partecipante " + this.getName() + ". Ho perso :((((";
             System.out.println(perso);
             scrittore.scrivi(perso);
